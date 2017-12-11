@@ -1,8 +1,8 @@
-define("ace/mode/sql_highlight_rules",["require","exports","module","ace/lib/oop","ace/mode/text_highlight_rules"], function(require, exports, module) {
+ace.define("ace/mode/sql_highlight_rules",["require","exports","module","ace/lib/oop","ace/mode/text_highlight_rules"], function(acequire, exports, module) {
 "use strict";
 
-var oop = require("../lib/oop");
-var TextHighlightRules = require("./text_highlight_rules").TextHighlightRules;
+var oop = acequire("../lib/oop");
+var TextHighlightRules = acequire("./text_highlight_rules").TextHighlightRules;
 
 var SqlHighlightRules = function() {
 
@@ -48,6 +48,9 @@ var SqlHighlightRules = function() {
             token : "string",           // ' string
             regex : "'.*?'"
         }, {
+            token : "string",           // ` string (apache drill)
+            regex : "`.*?`"
+        }, {
             token : "constant.numeric", // float
             regex : "[+-]?\\d+(?:(?:\\.\\d*)?(?:[eE][+-]?\\d+)?)?\\b"
         }, {
@@ -75,12 +78,12 @@ oop.inherits(SqlHighlightRules, TextHighlightRules);
 exports.SqlHighlightRules = SqlHighlightRules;
 });
 
-define("ace/mode/sql",["require","exports","module","ace/lib/oop","ace/mode/text","ace/mode/sql_highlight_rules"], function(require, exports, module) {
+ace.define("ace/mode/sql",["require","exports","module","ace/lib/oop","ace/mode/text","ace/mode/sql_highlight_rules"], function(acequire, exports, module) {
 "use strict";
 
-var oop = require("../lib/oop");
-var TextMode = require("./text").Mode;
-var SqlHighlightRules = require("./sql_highlight_rules").SqlHighlightRules;
+var oop = acequire("../lib/oop");
+var TextMode = acequire("./text").Mode;
+var SqlHighlightRules = acequire("./sql_highlight_rules").SqlHighlightRules;
 
 var Mode = function() {
     this.HighlightRules = SqlHighlightRules;
