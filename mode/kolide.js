@@ -1,5 +1,5 @@
 /* eslint-disable */
-ace.ace.define("ace/mode/kolide_highlight_rules",["require","exports","module","ace/lib/oop","ace/mode/sql_highlight_rules"], function(require, exports, module) {
+ace.define("ace/mode/kolide_highlight_rules",["require","exports","module","ace/lib/oop","ace/mode/sql_highlight_rules"], function(require, exports, module) {
   "use strict";
 
   var oop = acequire("../lib/oop");
